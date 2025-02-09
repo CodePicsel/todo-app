@@ -1,25 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Todo List</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced To-Do List</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Todo List</h1>
-        <form action="/add" method="POST">
-            <input type="text" name="task" placeholder="Enter new task" required>
-            <button type="submit">Add Task</button>
-        </form>
-        <ul>
-            {{#each todos}}
-            <li class="{{#if this.completed}}completed{{/if}}">
-                {{this.task}}
-                <a href="/toggle/{{@index}}">✓</a>
-                <a href="/delete/{{@index}}">✗</a>
-            </li>
-            {{/each}}
-        </ul>
+        <header>
+            <h1>My To-Do List</h1>
+            <div id="datetime"></div>
+            <button id="theme-toggle">Toggle Theme</button>
+        </header>
+        <main>
+            <input type="text" id="task-input" placeholder="Add a new task...">
+            <button id="add-task">Add</button>
+            <ul id="task-list"></ul>
+        </main>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
